@@ -23,10 +23,10 @@ OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	@$(CC) -o $(NAME) $(OBJS)
+	@$(CC) -o $(NAME) $(OBJS) libft/libft.a -I libft/includes/
 
 $(OBJS_DIR)/%.o: %.c *.h
-	$(CC) -o $@ -c $<
+	$(CC) -o $@ -c $< -I libft/includes/
 
 $(OBJS_DIR):
 	@mkdir objs
