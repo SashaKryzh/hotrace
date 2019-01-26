@@ -15,7 +15,8 @@ NAME = hotrace
 FLAGS = -Wall -Wextra -Werror
 CC = gcc
 
-SRCS =	main.c
+SRCS =	main.c \
+		put_funcs.c
 
 OBJS_DIR = ./objs
 OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))

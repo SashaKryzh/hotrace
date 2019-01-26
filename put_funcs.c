@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hotrace.h                                          :+:      :+:    :+:   */
+/*   put_funcs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okryzhan <okryzhan@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/26 14:03:53 by okryzhan          #+#    #+#             */
-/*   Updated: 2019/01/26 14:03:54 by okryzhan         ###   ########.fr       */
+/*   Created: 2019/01/26 17:07:38 by okryzhan          #+#    #+#             */
+/*   Updated: 2019/01/26 17:07:38 by okryzhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOTRACE_H
-# define HOTRACE_H
+#include "hotrace.h"
 
-# include <stdio.h>
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-# include "libft.h"
-
-# define TABLE_SIZE 1000000
-
-typedef struct		s_item
+void	m_putstr(char *s)
 {
-	char			*key;
-	char			*value;
-	struct s_item	*next;
-}					t_item;
+	int i;
 
-void		add_item(char **item);
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
+}
 
-void	show_res(char *keyword, char *value);
-
-#endif
+void	show_res(char *keyword, char *value)
+{
+	if (!value)
+	{
+		m_putstr(keyword);
+		m_putstr(": Not found.\n");
+	}
+	else
+	{
+		m_putstr(value);
+		write(1, "\n", 1);
+	}
+}

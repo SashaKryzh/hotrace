@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"hotrace.h": "c"
+		"hotrace.h": "c",
+		"string.h": "c"
 	}
 }
