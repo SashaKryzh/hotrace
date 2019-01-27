@@ -28,7 +28,10 @@ void	search_engine(void)
 		{
 			if (!ft_strcmp(tmp->key, line))
 			{
-				show_res(NULL, tmp->value);
+				if (!tmp->value[0])
+					show_res(line, NULL);
+				else
+					show_res(NULL, tmp->value);
 				break ;
 			}
 			tmp = tmp->next;

@@ -63,8 +63,6 @@ int		get_data(void)
 			break ;
 		if (read_line(item[1]))
 		{
-			if (!item[1][0])
-				return (0);
 			if (!(add_item(item[0], item[1])))
 				return (0);
 		}
