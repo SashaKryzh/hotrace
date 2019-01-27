@@ -18,7 +18,9 @@ CC = gcc
 SRCS =	main.c \
 		utils.c \
 		parser.c \
-		put_funcs.c
+		put_funcs.c \
+		ft_strdup.c \
+		ft_strcmp.c \
 
 OBJS_DIR = ./objs
 OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
@@ -26,10 +28,10 @@ OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	@$(CC) -O3 -o $(NAME) $(OBJS) libft/libft.a -I libft/includes/
+	@$(CC) -O3 -o $(NAME) $(OBJS)
 
 $(OBJS_DIR)/%.o: %.c *.h
-	$(CC) -O3 -o $@ -c $< -I libft/includes/
+	$(CC) -O3 -o $@ -c $<
 
 $(OBJS_DIR):
 	@mkdir objs

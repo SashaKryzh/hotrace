@@ -19,8 +19,6 @@
 # include <stdlib.h>
 # include <string.h>
 
-# include "libft.h"
-
 # define TABLE_SIZE 100000000
 
 typedef struct		s_item
@@ -53,5 +51,9 @@ size_t		get_hash(char *tag);
 
 void		m_putstr(char *s);
 void		show_res(char *keyword, char *value);
+
+
+int			ft_strcmp(const char *s1, const char *s2);
+char		*ft_strdup(const char *s);
 
 #endif
