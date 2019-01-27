@@ -14,8 +14,6 @@
 
 t_item	*g_tab;
 
-int		g_cnt;
-
 void	search_engine(void)
 {
 	char		line[1024];
@@ -48,10 +46,8 @@ int		main(void)
 		search_engine();
 	else
 	{
-		m_putstr("No value after tag\n");
+		m_putstr("Error\n");
 		return (1);
 	}
-	// printf("%d\n", g_cnt);
-	// system("leaks hotrace");
 	return (0);
 }

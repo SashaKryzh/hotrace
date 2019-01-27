@@ -12,7 +12,7 @@
 
 #include "hotrace.h"
 
-void	insert(t_item *tmp, char *key, char *val)
+int		insert(t_item *tmp, char *key, char *val)
 {
 	while (tmp && tmp->value)
 	{
@@ -20,20 +20,19 @@ void	insert(t_item *tmp, char *key, char *val)
 		{
 			free(tmp->value);
 			tmp->value = ft_strdup(val);
-			return ;
+			return (tmp->value ? 1 : 0);
 		}
 		if (!tmp->next)
 		{
 			tmp->next = new_item(key, val);
-			g_cnt++;
-			// printf("%d\n", g_cnt);
-			return ;
+			return (tmp->next ? 1 : 0);
 		}
 		tmp = tmp->next;
 	}
+	return (1);
 }
 
-void	add_item(char *key, char *val)
+int		add_item(char *key, char *val)
 {
 	t_item		*tmp;
 	size_t		hash;
@@ -43,12 +42,15 @@ void	add_item(char *key, char *val)
 	{
 		g_tab[hash].key = ft_strdup(key);
 		g_tab[hash].value = ft_strdup(val);
+		if (!g_tab[hash].key || !g_tab[hash].value)
+			return (0);
 	}
 	else
 	{
 		tmp = &g_tab[hash];
-		insert(tmp, key, val);
+		return (insert(tmp, key, val));
 	}
+	return (1);
 }
 
 int		get_data(void)
@@ -60,7 +62,12 @@ int		get_data(void)
 		if (!**item)
 			break ;
 		if (read_line(item[1]))
-			add_item(item[0], item[1]);
+		{
+			if (!item[1][0])
+				return (0);
+			if (!(add_item(item[0], item[1])))
+				return (0);
+		}
 		else
 			return (0);
 	}

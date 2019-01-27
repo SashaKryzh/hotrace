@@ -16,9 +16,12 @@ t_item		*new_item(char *key, char *val)
 {
 	t_item *new;
 
-	new = (t_item *)malloc(sizeof(t_item));
+	if (!(new = (t_item *)malloc(sizeof(t_item))))
+		return (NULL);
 	new->key = ft_strdup(key);
 	new->value = ft_strdup(val);
+	if (!new->key || !new->value)
+		return (NULL);
 	new->next = NULL;
 	return (new);
 }

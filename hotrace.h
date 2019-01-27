@@ -30,8 +30,6 @@ typedef struct		s_item
 
 extern t_item		*g_tab;
 
-extern int			g_cnt;
-
 /*
 **	Parser
 */
@@ -53,7 +51,6 @@ size_t				get_hash(char *tag);
 
 void				m_putstr(char *s);
 void				show_res(char *keyword, char *value);
-
 
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *s);
