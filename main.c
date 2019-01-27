@@ -45,9 +45,6 @@ int		main(void)
 	if (get_data())
 		search_engine();
 	else
-	{
-		m_putstr("Error\n");
 		return (1);
-	}
 	return (0);
 }
