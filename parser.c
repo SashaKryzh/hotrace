@@ -12,6 +12,27 @@
 
 #include "hotrace.h"
 
+void	insert(t_item *tmp, char *key, char *val)
+{
+	while (tmp && tmp->value)
+	{
+		if (!ft_strcmp(tmp->key, key))
+		{
+			free(tmp->value);
+			tmp->value = ft_strdup(val);
+			return ;
+		}
+		if (!tmp->next)
+		{
+			tmp->next = new_item(key, val);
+			g_cnt++;
+			// printf("%d\n", g_cnt);
+			return ;
+		}
+		tmp = tmp->next;
+	}
+}
+
 void	add_item(char *key, char *val)
 {
 	t_item		*tmp;
@@ -26,21 +47,7 @@ void	add_item(char *key, char *val)
 	else
 	{
 		tmp = &g_tab[hash];
-		while (tmp && tmp->value)
-		{
-			if (!ft_strcmp(tmp->key, key))
-			{
-				free(tmp->value);
-				tmp->value = ft_strdup(val);
-				return ;
-			}
-			if (!tmp->next)
-			{
-				tmp->next = new_item(key, val);
-				return ;
-			}
-			tmp = tmp->next;
-		}
+		insert(tmp, key, val);
 	}
 }
 

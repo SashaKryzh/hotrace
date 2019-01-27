@@ -16,6 +16,7 @@ FLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 SRCS =	main.c \
+		hash.c \
 		utils.c \
 		parser.c \
 		put_funcs.c \

@@ -30,30 +30,32 @@ typedef struct		s_item
 
 extern t_item		*g_tab;
 
+extern int			g_cnt;
+
 /*
 **	Parser
 */
 
-int			get_data(void);
-int			read_line(char *line);
+int					get_data(void);
+int					read_line(char *line);
 
-t_item		*new_item(char *key, char *val);
+t_item				*new_item(char *key, char *val);
 
 /*
 **	Search
 */
 
-size_t		get_hash(char *tag);
+size_t				get_hash(char *tag);
 
 /*
 **	Put funcs
 */
 
-void		m_putstr(char *s);
-void		show_res(char *keyword, char *value);
+void				m_putstr(char *s);
+void				show_res(char *keyword, char *value);
 
 
-int			ft_strcmp(const char *s1, const char *s2);
-char		*ft_strdup(const char *s);
+int					ft_strcmp(const char *s1, const char *s2);
+char				*ft_strdup(const char *s);
 
 #endif

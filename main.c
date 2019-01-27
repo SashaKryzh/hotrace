@@ -33,8 +33,6 @@ void	search_engine(void)
 				show_res(NULL, tmp->value);
 				break ;
 			}
-			if (tmp->next)
-				g_cnt++;
 			tmp = tmp->next;
 		}
 		if (!tmp || !tmp->value)
@@ -53,7 +51,7 @@ int		main(void)
 		m_putstr("No value after tag\n");
 		return (1);
 	}
-	// ft_printf("%d\n", g_cnt);
+	// printf("%d\n", g_cnt);
 	// system("leaks hotrace");
 	return (0);
 }
