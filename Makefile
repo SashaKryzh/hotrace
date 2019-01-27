@@ -13,7 +13,7 @@
 NAME = hotrace
 
 FLAGS = -Wall -Wextra -Werror
-CC = gcc
+CC = gcc $(FLAGS)
 
 SRCS =	main.c \
 		hash.c \
