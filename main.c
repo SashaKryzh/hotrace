@@ -105,7 +105,7 @@ void	search_engine(void)
 	{
 		hash = get_hash(line);
 		tmp = &g_tab[hash];
-		while (tmp->value)
+		while (tmp && tmp->value)
 		{
 			if (!ft_strcmp(tmp->key, line))
 			{
