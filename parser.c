@@ -12,17 +12,6 @@
 
 #include "hotrace.h"
 
-t_item	*new_item(char *key, char *val)
-{
-	t_item *new;
-
-	new = (t_item *)malloc(sizeof(t_item));
-	new->key = ft_strdup(key);
-	new->value = ft_strdup(val);
-	new->next = NULL;
-	return (new);
-}
-
 void	add_item(char *key, char *val)
 {
 	t_item		*tmp;
@@ -53,25 +42,6 @@ void	add_item(char *key, char *val)
 			tmp = tmp->next;
 		}
 	}
-}
-
-int		read_line(char *line)
-{
-	int ret;
-	int	i;
-
-	i = 0;
-	while ((ret = read(0, &line[i], 1)) > 0)
-	{
-		if (line[i] == '\n')
-		{
-			line[i] = '\0';
-			break ;
-		}
-		i++;
-	}
-	line[i] = '\0';
-	return (i || ret);
 }
 
 int		get_data(void)

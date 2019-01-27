@@ -16,6 +16,7 @@ FLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 SRCS =	main.c \
+		utils.c \
 		parser.c \
 		put_funcs.c
 
@@ -25,10 +26,10 @@ OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	@$(CC) -o $(NAME) $(OBJS) libft/libft.a -I libft/includes/
+	@$(CC) -O3 -o $(NAME) $(OBJS) libft/libft.a -I libft/includes/
 
 $(OBJS_DIR)/%.o: %.c *.h
-	$(CC) -o $@ -c $< -I libft/includes/
+	$(CC) -O3 -o $@ -c $< -I libft/includes/
 
 $(OBJS_DIR):
 	@mkdir objs

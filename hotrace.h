@@ -39,6 +39,8 @@ extern t_item		*g_tab;
 int			get_data(void);
 int			read_line(char *line);
 
+t_item		*new_item(char *key, char *val);
+
 /*
 **	Search
 */

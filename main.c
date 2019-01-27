@@ -14,25 +14,13 @@
 
 t_item	*g_tab;
 
-size_t	get_hash(char *tag)
-{
-	size_t	hash;
-	int		c;
-
-	hash = 5381;
-	while ((c = *tag++))
-		hash = ((hash << 5) + hash) + c;
-	hash %= TABLE_SIZE;
-	return (hash);
-}
-
 int		g_cnt;
 
 void	search_engine(void)
 {
-	char	line[1024];
-	t_item	*tmp;
-	int		hash;
+	char		line[1024];
+	size_t		hash;
+	t_item		*tmp;
 
 	while (read_line(line))
 	{
