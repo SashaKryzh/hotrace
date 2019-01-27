@@ -124,20 +124,7 @@ int		main(void)
 {
 	if (get_data() > 0)
 	{
-		// ft_putendl("GOOD");
-		// t_item *tmp;
-
-		// tmp = &g_tab[1];
-		// while (tmp)
-		// {
-		// 	ft_putstr(tmp->key);
-		// 	ft_putstr(" ");
-		// 	ft_putstr(tmp->value);
-		// 	ft_putstr("\n");
-		// 	tmp = tmp->next;
-		// }
 		search_engine();
 	}
-	// system("leaks hotrace");
 	return (0);
 }
