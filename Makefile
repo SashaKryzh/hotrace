@@ -16,6 +16,7 @@ FLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 SRCS =	main.c \
+		parser.c \
 		put_funcs.c
 
 OBJS_DIR = ./objs

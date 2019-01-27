@@ -21,7 +21,7 @@
 
 # include "libft.h"
 
-# define TABLE_SIZE 1000000
+# define TABLE_SIZE 100000000
 
 typedef struct		s_item
 {
@@ -30,8 +30,26 @@ typedef struct		s_item
 	struct s_item	*next;
 }					t_item;
 
-void		add_item(char **item);
+extern t_item		*g_tab;
 
-void	show_res(char *keyword, char *value);
+/*
+**	Parser
+*/
+
+int			get_data(void);
+int			read_line(char *line);
+
+/*
+**	Search
+*/
+
+size_t		get_hash(char *tag);
+
+/*
+**	Put funcs
+*/
+
+void		m_putstr(char *s);
+void		show_res(char *keyword, char *value);
 
 #endif
